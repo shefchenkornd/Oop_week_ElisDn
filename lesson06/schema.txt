@@ -1,0 +1,90 @@
+employee
+    id
+    first_name
+    last_name
+    address
+    email
+    status
+
+interview // собеседование
+    id
+    date
+    first_name
+    last_name
+    email
+    status
+    reject_reason
+    employee_id NULL на момент создания собеса у нас может не быть человека в БД
+
+contract // договор
+    id
+    employee_id
+    first_name // мы продублировали данные, потому что человек может сменить ФИО,
+    last_name  // и нам нужно сохранить первоначальные данные на момент подписания договора
+    date_open
+    date_close
+    close_reason
+
+position // должности
+    id
+    name // название должности
+
+order // приказы
+    id
+    date
+
+recruit // приказ о приёме на работу
+    id
+    order_date // дата приказа
+    employee_id
+    date // дата с которой сотрудник начинает работать
+
+assignment // договор о назначении сотрудника на новую позицию или отпуск
+    id
+    order_id
+    employee_id
+    position_id
+    date
+    rate
+    salary
+    status
+
+vacation // отпуск
+    id
+    order_id // id приказа
+    employee_id
+    date_from
+    date_to
+
+dismiss // увольнение сотрудника
+    id
+    order_id
+    employee_id
+    date
+    reason
+
+bonus // премия
+    id
+    order_id
+    employee_id
+    cost
+
+log     // лог по нашей БД, чтобы сохранять историю изменений
+    id
+    created_at
+    user_id
+    message
+
+
+
+
+
+
+
+
+
+
+
+
+
+

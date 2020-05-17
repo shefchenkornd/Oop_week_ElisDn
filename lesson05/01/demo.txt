@@ -1,0 +1,5 @@
+Абстракция - это человеческий язык
+
+isNew() {
+    return this->status == self::STATUS_NEW;
+}
